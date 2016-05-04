@@ -1,0 +1,18 @@
+{
+  "name": "downode",
+  "version": "1.0.0",
+  "description": "Download files",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaco Kok",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "eztv": "0.0.10",
+    "hbs": "^4.0.0",
+    "request": "^2.69.0"
+  }
+}
