@@ -13,6 +13,7 @@
     "express": "^4.13.4",
     "eztv": "0.0.10",
     "hbs": "^4.0.0",
+    "machinepack-findtorrent": "^0.1.0",
     "request": "^2.69.0"
   }
 }

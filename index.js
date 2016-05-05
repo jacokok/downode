@@ -1,5 +1,6 @@
 var express = require('express');
 var eztv = require('eztv');
+var FindTorrent = require('machinepack-findtorrent');
 var app = express();
 var hbs = require('hbs');
 
@@ -18,11 +19,21 @@ app.get('/test', function (req, res) {
 
 app.get('/shows', function (req, res) {
   console.log(req.query.show);
-  //res.render('shows', {search: req.query.show});
-  eztv.getShows({query: req.params.show}, function(err, results) {
-  	if(err) res.send(err);
-    res.send(results);
+
+  FindTorrent.queryAll({
+    query: 'big bang theory',
+    }).exec({
+    // An unexpected error occurred.
+    error: function (err){
+      console.log(err);
+    },
+    // OK.
+    success: function (result){
+      console.log(result);
+      res.render('test', {Results: result});
+    },
   });
+
 });
 
 app.get('/episodes', function(req, res){
