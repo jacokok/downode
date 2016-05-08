@@ -21,16 +21,14 @@ app.get('/shows', function (req, res) {
   console.log(req.query.show);
 
   FindTorrent.queryAll({
-    query: 'big bang theory',
+    query: req.query.show,
     }).exec({
-    // An unexpected error occurred.
     error: function (err){
       console.log(err);
     },
-    // OK.
     success: function (result){
       console.log(result);
-      res.render('test', {Results: result});
+      res.render('shows', {Results: result, search: req.query.show});
     },
   });
 

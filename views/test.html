@@ -1,5 +1,17 @@
+<form action="/shows" class="form-inline">
+  <div class="form-group">
+    <label for="show">Show</label>
+    <input type="text" class="form-control" name="show" id="show" value="{{search}}" placeholder="Big Bang Theory">
+  </div>
+  <button type="submit" class="btn btn-default">Search</button>
+</form>
+
+<div class="list-group">
 {{#each Results}} 
-<div>
-  This is a test: Hello {{title}}
-</div>
+<a href="{{url}}" class="list-group-item">
+  <span class="badge">{{seeders}}</span>
+  <h4 class="list-group-item-heading">{{title}}</h4>
+  <p class="list-group-item-text">{{meta.pubDate}} ({{provider}})</p>
+</a>
 {{/each}}
+</div>
